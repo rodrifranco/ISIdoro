@@ -109,14 +109,15 @@ export default function Chat() {
                                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                                   <div className="animate-spin h-3 w-3 border border-current border-t-transparent rounded-full"></div>
                                   Buscando información...
-                                  <div className="text-sm whitespace-pre-wrap">{toolInvocation.result}</div>
                                 </div>
                               ) : (
                                 <div className="bg-muted/50 rounded-lg p-3 border">
                                   <div className="text-xs font-medium text-muted-foreground mb-2">
                                     📚 Información encontrada
                                   </div>
-                                  <div className="text-sm whitespace-pre-wrap">{toolInvocation.result}</div>
+                                  <div className="text-sm whitespace-pre-wrap">
+                                    {'result' in toolInvocation ? toolInvocation.result : ''}
+                                  </div>
                                 </div>
                               )}
                             </div>
