@@ -33,7 +33,7 @@ export async function POST(req: Request) {
         execute: async ({ content }) => createResource({ content }),
       }),
       getInformation: tool({
-        description: `get information from your knowledge base to answer questions.`,
+        description: `get information from your knowledge base to answer questions. You will only give one answer`,
         parameters: z.object({
           question: z.string().describe('the users question'),
         }),

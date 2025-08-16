@@ -8,7 +8,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const universitySuggestions = [
-  "¿Qué materias debo aprobar para cursar Arquitectura?",
+  "¿Qué materias debo aprobar para cursar Comunicación de Datos?",
   "¿En qué cuatrimestre se cursa Bases de Datos?",
   "¿Cuáles son las correlativas de Análisis Matemático II?",
   "¿Cuáles son las materias de primer año de Ingeniería en Sistemas?",
