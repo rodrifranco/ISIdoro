@@ -4,14 +4,16 @@ import { useChat } from "@ai-sdk/react"
 import { ArrowUp, Sun, Moon, User, Bot } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
+import Image from "next/image"
+import Link from "next/link"
 
 const universitySuggestions = [
-  "¿Qué materias debo aprobar para cursar Algoritmos y Estructuras de Datos?",
+  "¿Qué materias debo aprobar para cursar Arquitectura?",
   "¿En qué cuatrimestre se cursa Bases de Datos?",
   "¿Cuáles son las correlativas de Análisis Matemático II?",
-  "¿Qué materias son obligatorias en primer año de Ingeniería en Sistemas?",
-  "¿Cuándo puedo cursar el Trabajo Final de Carrera?",
+  "¿Cuáles son las materias de primer año de Ingeniería en Sistemas?",
   "¿Qué materias electivas puedo elegir en cuarto año?",
+  "¿Donde puedo calcular las horas de electivas que poseo?",
 ]
 
 export default function Chat() {
@@ -36,8 +38,25 @@ export default function Chat() {
       {/* Header minimalista */}
       <header className="sticky top-0 z-10 bg-background/80 backdrop-blur-sm border-b px-4 py-3">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
-          <div>
-            <h1 className="text-xl font-semibold">Asistente Universitario</h1>
+          <div className="flex items-center gap-3">
+            <Link 
+              href="https://www.frre.utn.edu.ar/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <Image 
+                src="https://www.universidadesargentinas.com.ar/images/universities/logos/utn.png" 
+                alt="UTN Logo" 
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </Link>
+            <div>
+              <h1 className="text-xl font-semibold">ISIdoro</h1>
+              <h2 className="text-sm text-muted-foreground">Departamento de Ingeniería en Sistemas de Información</h2>
+            </div>
           </div>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -57,7 +76,7 @@ export default function Chat() {
             <div className="text-center space-y-3">
               <h2 className="text-2xl font-medium">¿En qué puedo ayudarte?</h2>
               <p className="text-muted-foreground text-sm max-w-md">
-                Pregúntame sobre materias, correlativas y todo lo relacionado con tu carrera universitaria.
+                Pregúntame sobre materias, correlativas y todo lo relacionado con ISI.
               </p>
             </div>
 
